@@ -7,7 +7,7 @@ RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android
     && unzip -q android-sdk.zip -d android-sdk-linux && rm android-sdk.zip
 
 RUN mkdir android-sdk-linux/licenses && \
-    printf "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > android-sdk-linux/licenses/android-sdk-license && \
+    printf "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > android-sdk-linux/licenses/android-sdk-license && \
     android-sdk-linux/tools/bin/sdkmanager --update > update.log && \
     android-sdk-linux/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3" "extras;google;m2repository" "extras;android;m2repository" > installPlatform.log && \
     export ANDROID_HOME=$PWD/android-sdk-linux && \
